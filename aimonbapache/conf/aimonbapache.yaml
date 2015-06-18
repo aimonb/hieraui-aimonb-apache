@@ -15,6 +15,6 @@ form:
       pattern: wildcard
     - type: text
       title: Source Repository
-      tooltip: GIT SSH URL for your site repo
+      tooltip: GIT HTTPS URL for your site repo
       name: source_repo
       pattern: wildcard
