@@ -1,6 +1,15 @@
-￼---
+---
+page:
+  title: AimonB Apache
 form:
   fields:
+    - type: header
+      title: Server
+    - type: text
+      title: Host Name (FQDN)
+      tooltip: FQDN of your web server
+      name: hostname
+      pattern: fqdn
     - type: header
       title: Apache Vhost
     - type: text

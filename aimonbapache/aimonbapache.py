@@ -7,6 +7,7 @@ class Aimonbapache(Form):
         valid = True
         if 'vhost' not in form_data or \
            'docroot' not in form_data or \
+           'hostname' not in form_data or \
            'source_repo' not in form_data:
             valid = False
         if valid is False:
@@ -15,10 +16,12 @@ class Aimonbapache(Form):
 
     def process(_self, form_data):
         nodes = {}
+        hostname = form_data['hostname']
         vhost = form_data['vhost']
-        nodes[vhost]['classes'] = ['aimonb-apache']
-        nodes[vhost]['aimonb-apache::vhost'] = vhost
-        nodes[vhost]['aimonb-apache::docroot'] = form_data['docroot']
-        nodes[vhost]['aimonb-apache::source'] = form_data['source_repo']
+        nodes[hostname] = {}
+        nodes[hostname]['classes'] = ['aimonb_apache']
+        nodes[hostname]['aimonb_apache::vhost'] = vhost
+        nodes[hostname]['aimonb_apache::docroot'] = form_data['docroot']
+        nodes[hostname]['aimonb_apache::source_repo'] = form_data['source_repo']
 
         return nodes
