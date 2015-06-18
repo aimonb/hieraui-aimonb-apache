@@ -1,0 +1,20 @@
+￼---
+form:
+  fields:
+    - type: header
+      title: Apache Vhost
+    - type: text
+      title: VHost Name (FQDN)
+      tooltip: FQDN of your web app
+      name: vhost
+      pattern: fqdn
+    - type: text
+      title: Document Root 
+      tooltip: Where you site goes
+      name: docroot
+      pattern: wildcard
+    - type: text
+      title: Source Repository
+      tooltip: GIT SSH URL for your site repo
+      name: source_repo
+      pattern: wildcard
